@@ -14,6 +14,8 @@ zueltsxy展示网站
 2. header
 3. footer
 4. banner
+5. slider
+6. photo
 
 ## 参考
 

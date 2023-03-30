@@ -1,0 +1,605 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block banner %}
+<!-- import banner layout -->
+{% include 'layout/banner.html' %}
+{% endblock %}
+
+{% block contents %}
+    <!-- feature section -->
+    <section class="w3l-feature-8">
+        <div class="features-main py-5">
+            <div class="container py-md-5 py-4">
+                <div class="row features text-center py-xl-2">
+                    <div class="col-lg-3 col-sm-6 feature-1">
+                        <div class="feature-body">
+                            <div class="feature-images pb-sm-3 pb-1">
+                                <img src="{% static 'images/icon1.png' %}" alt="" class="img-fluid">
+                            </div>
+                            <div class="feature-info mt-4">
+                                <a href="about.html">
+                                    <h3 class="feature-titel">
+                                        Perfect Venues
+                                    </h3>
+                                </a>
+                                <p class="feature-text">Lorem ipsum dolor sit amet consectetur adipis</p>
+                                <a href="about.html" class="btn btn-style btn-style-normal mt-4">Our Venues</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 feature-2 mt-sm-0 mt-5">
+                        <div class="feature-body">
+                            <div class="feature-images pb-sm-3 pb-1">
+                                <img src="{% static 'images/icon2.png' %}" alt="" class="img-fluid">
+                            </div>
+                            <div class="feature-info mt-4">
+                                <a href="about.html">
+                                    <h3 class="feature-titel">DJ Music</h3>
+                                </a>
+                                <p class="feature-text">Lorem ipsum dolor sit amet consectetur adipis</p>
+                                <a href="about.html" class="btn btn-style btn-style-normal mt-4">Music Lists</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 feature-3 mt-lg-0 mt-5">
+                        <div class="feature-body">
+                            <div class="feature-images pb-sm-3 pb-1">
+                                <img src="{% static 'images/icon3.png' %}" alt="" class="img-fluid">
+                            </div>
+                            <div class="feature-info mt-4">
+                                <a href="about.html">
+                                    <h3 class="feature-titel">Food & Drinks</h3>
+                                </a>
+                                <p class="feature-text">Lorem ipsum dolor sit amet consectetur adipis</p>
+                                <a href="about.html" class="btn btn-style btn-style-normal mt-4">Menu Lists</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 feature-3 mt-lg-0 mt-5">
+                        <div class="feature-body">
+                            <div class="feature-images pb-sm-3 pb-1">
+                                <img src="{% static 'images/icon4.png' %}" alt="" class="img-fluid">
+                            </div>
+                            <div class="feature-info mt-4">
+                                <a href="about.html">
+                                    <h3 class="feature-titel">Fireworks</h3>
+                                </a>
+                                <p class="feature-text">Lorem ipsum dolor sit amet consectetur adipis</p>
+                                <a href="about.html" class="btn btn-style btn-style-normal mt-4">Our Parties</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //feature section -->
+
+    <!-- videos section -->
+    <section class="w3l-homeblock4 py-5" id="video">
+        <div class="video-recipe py-md-5 py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 align-self">
+                        <div class="waviy mb-sm-3 mb-2">
+                            <span style="--i:1">A</span>
+                            <span style="--i:2">m</span>
+                            <span style="--i:3">a</span>
+                            <span style="--i:4">z</span>
+                            <span style="--i:5">i</span>
+                            <span style="--i:6">n</span>
+                            <span style="--i:7">g</span>
+                            <span style="--i:7"></span>
+                            <span style="--i:8">C</span>
+                            <span style="--i:1">e</span>
+                            <span style="--i:2">l</span>
+                            <span style="--i:3">e</span>
+                            <span style="--i:4">b</span>
+                            <span style="--i:5">r</span>
+                            <span style="--i:6">a</span>
+                            <span style="--i:6">t</span>
+                            <span style="--i:7">i</span>
+                            <span style="--i:8">o</span>
+                            <span style="--i:9">n</span>
+                            <span style="--i:10">s</span>
+                        </div>
+
+                        <p class="pr-lg-5">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
+                            ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur
+                            adipisicing
+                            elit. Non quae, fugiat consequatur voluptatem nihil ad. Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="col-lg-6 mt-lg-0 mt-sm-5 mt-4">
+                        <div class="row">
+                            <div class="col-md-6 p-md-0">
+                                <iframe src="https://player.vimeo.com/video/195905200" frameborder="0"
+                                    allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-md-6 mt-md-0 mt-4">
+                                <iframe src="https://player.vimeo.com/video/147318200" frameborder="0"
+                                    allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //videos section -->
+
+    <!-- bg with text section -->
+    <section class="w3l-covers-14 position-relative">
+        <div class="covers14-block py-5">
+            <div class="container py-md-5 py-4">
+                <!-- fireworks effect -->
+                <div class="pyro">
+                    <div class="before"></div>
+                    <div class="after"></div>
+                </div>
+                <div class="covers14-text text-center mx-auto py-lg-5" style="max-width:780px">
+                    <h4>Celebrate With Us!</h4>
+                    <p class="mt-3 sub-title">Sed ut perspiciatis unde omnis iste natus error sit olupt atem accusantium
+                        dolo remque lauda ntium,
+                        totam rem aperiam.</p>
+                    <a href="about.html" class="btn btn-style mt-5">Let's Get Started !</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //bg with text section -->
+
+    <!-- blog section -->
+    <div class="blog-section py-5">
+        <div class="container py-md-5 py-4">
+            <div class="waviy text-center mb-md-5 mb-4">
+                <span style="--i:1">O</span>
+                <span style="--i:2">u</span>
+                <span style="--i:3">r</span>
+                <span style="--i:4"></span>
+                <span style="--i:5">N</span>
+                <span style="--i:6">e</span>
+                <span style="--i:7">w</span>
+                <span style="--i:8">s</span>
+                <span style="--i:1"></span>
+                <span style="--i:2">&</span>
+                <span style="--i:3"></span>
+                <span style="--i:4">E</span>
+                <span style="--i:5">v</span>
+                <span style="--i:6">e</span>
+                <span style="--i:7">n</span>
+                <span style="--i:8">t</span>
+                <span style="--i:9">s</span>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 item">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#single">
+                                <img class="card-img-bottom d-block radius-image-full" src="{% static 'images/blog1.jpg' %}"
+                                    alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body blog-details">
+                            <span class="label-blue">Parties</span>
+                            <a href="#single" class="blog-desc">Sunt in culpa qui officia dese runt mollit anim
+                            </a>
+                            <div class="author align-items-center mt-3 mb-1">
+                                <img src="{% static 'images/testi1.jpg' %}" alt="" class="img-fluid rounded-circle" />
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#single">Isabella ava</a> </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Jan 28 2021 </span>. <span
+                                            class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#single">
+                                <img class="card-img-bottom d-block radius-image-full" src="{% static 'images/blog3.jpg' %}"
+                                    alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body blog-details">
+                            <span class="label-blue">Celebrations</span>
+                            <a href="#single" class="blog-desc">Eaque ipsa quae ab illo remos dez inve ntore
+                            </a>
+                            <div class="author align-items-center mt-3 mb-1">
+                                <img src="{% static 'images/testi2.jpg' %}" alt="" class="img-fluid rounded-circle" />
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#single">Charlotte mia</a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Jan 13, 2021 </span>. <span
+                                            class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#single">
+                                <img class="card-img-bottom d-block radius-image-full" src="{% static 'images/blog2.jpg' %}"
+                                    alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body blog-details">
+                            <span class="label-blue">New Year</span>
+                            <a href="#single" class="blog-desc">Quasi archi tecto bea dicta sunt expl icab
+                            </a>
+                            <div class="author align-items-center mt-3 mb-1">
+                                <img src="{% static 'images/testi3.jpg' %}" alt="" class="img-fluid rounded-circle" />
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#single">Charlotte mia</a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value">Jan 06 2021 </span>. <span
+                                            class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //blog section -->
+
+    <!-- services section -->
+    <section class="w3l-content-11-main position-relative">
+        <div class="content-design-11 py-5">
+            <div class="container py-md-5 py-4">
+                <h3 class="title-style text-center mb-md-5 mb-4">We Provide Best Services</h3>
+                <div class="content-sec-11">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s3.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">Awesome Design</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s1.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">Organised</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4 mb-lg-0">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s2.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">We are the best</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4 mb-0">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s4.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">Creativity</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <a class="btn btn-style" href="services.html">Learn More Services</a>
+                    </div>
+                </div>
+            </div>
+            <!-- balloon animation -->
+            <div class="circle">
+
+            </div>
+            <!-- balloon animation -->
+            <div class="animation-2">
+
+            </div>
+        </div>
+    </section>
+    <!-- //services section -->
+
+    <!-- team sections -->
+    <section class="w3l-team-main" id="team">
+        <div class="team py-5">
+            <div class="container py-md-5 py-4">
+                <div class="waviy white-text text-center mb-sm-5 mb-4">
+                    <span style="--i:1">O</span>
+                    <span style="--i:2">u</span>
+                    <span style="--i:3">r</span>
+                    <span style="--i:4"></span>
+                    <span style="--i:5">T</span>
+                    <span style="--i:6">e</span>
+                    <span style="--i:7">a</span>
+                    <span style="--i:8">m</span>
+                    <span style="--i:9"></span>
+                    <span style="--i:10">M</span>
+                    <span style="--i:11">e</span>
+                    <span style="--i:12">m</span>
+                    <span style="--i:13">b</span>
+                    <span style="--i:14">e</span>
+                    <span style="--i:15">r</span>
+                    <span style="--i:16">s</span>
+                </div>
+                <!-- fireworks effect -->
+                <div class="pyro">
+                    <div class="before"></div>
+                    <div class="after"></div>
+                </div>
+                <div class="row team-row mt-md-5 mt-4">
+                    <div class="col-lg-3 col-6 team-wrap">
+                        <div class="team-member text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team1.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Lyn Victor</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                    <div class="col-lg-3 col-6 team-wrap">
+                        <div class="team-member text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team2.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Meyer Lson</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                    <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
+                        <div class="team-member last text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team3.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Lyn Meyer</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                    <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
+                        <div class="team-member last text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team4.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Sam Mills</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //team sections -->
+
+    <!-- testimonials -->
+    <section class="w3l-clients-1" id="testimonials">
+        <div class="cusrtomer-layout py-5">
+            <div class="container py-md-5 py-4">
+                <div class="waviy text-center mb-sm-5 mb-4">
+                    <span style="--i:1">W</span>
+                    <span style="--i:2">h</span>
+                    <span style="--i:3">a</span>
+                    <span style="--i:4">t</span>
+                    <span style="--i:5"></span>
+                    <span style="--i:6">P</span>
+                    <span style="--i:7">e</span>
+                    <span style="--i:8">o</span>
+                    <span style="--i:1">p</span>
+                    <span style="--i:2">l</span>
+                    <span style="--i:3">e</span>
+                    <span style="--i:4"></span>
+                    <span style="--i:5">S</span>
+                    <span style="--i:6">a</span>
+                    <span style="--i:7">y</span>
+                </div>
+                <div class="testimonial-row">
+                    <div id="owl-demo2" class="owl-two owl-carousel owl-theme mb-md-3 mb-sm-5 mb-4">
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi1.jpg' %}" alt="" class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Dennis wilson</h3>
+                                            <p class="identity">Customer </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi2.jpg' %}" alt="" class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Tommy sakura</h3>
+                                            <p class="identity">Customer </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi3.jpg' %}" alt="" class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Roy Linderson</h3>
+                                            <p class="identity">Customer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi2.jpg' %}" alt="" class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Mike Thyson</h3>
+                                            <p class="identity">Customer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //testimonials -->
+
+    <!-- call section -->
+    <section class="w3l-call-to-action-6">
+        <div class="call-sec-style py-5">
+            <div class="container py-md-4 py-3">
+                <div class="row align-items-center">
+                    <div class="col-md-5 col-float-lt">
+                        <h3 class="title-big">Register now !</h3>
+                        <p>Wanna Join in, please call us today</p>
+                    </div>
+                    <div class="col-md-7 float-rt text-md-right align-items-center mt-md-0 mt-4">
+                        <ul class="buttons">
+                            <li class="phone-sec"><span class="fa fa-volume-control-phone mr-1"
+                                    aria-hidden="true"></span>
+                                <a class="call-style-w3" href="tel:+1(23) 456 789 0000">+1(23) 456 789 0000</a>
+                            </li>
+                            <li class="green">Or</li>
+                            <li><a href="contact.html" class="btn btn-style">Get in touch</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //call section -->
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
