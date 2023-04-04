@@ -1,13 +1,9 @@
 {% extends 'layout/base.html' %}
 {% load static %}
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
-{% endblock %}
-
 {% block banner %}
-<!-- import banner layout -->
-{% include 'layout/banner.html' %}
+    <!-- import banner layout -->
+    {% include 'layout/banner.html' %}
 {% endblock %}
 
 {% block contents %}
@@ -83,142 +79,220 @@
     <!-- /portfolio section -->
     <!-- https://isotope.metafizzy.co/ -->
     <section id="portfolio" class="portfolio-area portfolio-four pb-100">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 col-md-10">
-            <div class="section-title text-center pb-10">
-              <h3 class="title">Featured Works</h3>
-              <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-10">
+                        <h3 class="title">Featured Works</h3>
+                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get
+                            results. Happiness guaranteed!</p>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="portfolio-menu text-center mt-50">
+                        <ul>
+                            <li data-filter="*" class="active">ALL WORK</li>
+                            <li data-filter=".branding-4">BRANDING</li>
+                            <li data-filter=".marketing-4">MARKETING</li>
+                            <li data-filter=".planning-4">PLANNING</li>
+                            <li data-filter=".research-4">RESEARCH</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="row no-gutters grid mt-50" style="position: relative; height: 825px;">
+                        <div class="col-lg-4 col-sm-6 branding-4 planning-4"
+                             style="position: absolute; left: 0px; top: 0px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/1.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="1159924722"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/1.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 marketing-4 research-4"
+                             style="position: absolute; left: 275px; top: 0px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/2.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="1454424643"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/2.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 branding-4 marketing-4"
+                             style="position: absolute; left: 550px; top: 0px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/3.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="1748924564"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/3.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 planning-4 research-4"
+                             style="position: absolute; left: 0px; top: 275px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/4.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="2043424485"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/4.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 marketing-4" style="position: absolute; left: 275px; top: 275px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/5.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="2337924406"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/5.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 planning-4" style="position: absolute; left: 550px; top: 275px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/6.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="2632424327"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/6.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 research-4" style="position: absolute; left: 0px; top: 550px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/7.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="2926924248"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/7.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 branding-4 planning-4"
+                             style="position: absolute; left: 275px; top: 550px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/8.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="3221424169"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/8.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 marketing-4" style="position: absolute; left: 550px; top: 550px;">
+                            <div class="single-portfolio">
+                                <div class="portfolio-image"><img src="{% static 'images/portfolio/9.png' %}" alt=""
+                                                                  data-pagespeed-url-hash="3515924090"
+                                                                  onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                        <div class="portfolio-content">
+                                            <div class="portfolio-icon"><a class="image-popup"
+                                                                           href="{% static 'images/portfolio/9.png' %}"><i
+                                                    class="lni lni-zoom-in"></i></a> <img
+                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                    class="shape"></div>
+                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                     class="shape"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-3">
-            <div class="portfolio-menu text-center mt-50">
-              <ul>
-                <li data-filter="*" class="active">ALL WORK</li>
-                <li data-filter=".branding-4">BRANDING</li>
-                <li data-filter=".marketing-4">MARKETING</li>
-                <li data-filter=".planning-4">PLANNING</li>
-                <li data-filter=".research-4">RESEARCH</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-9 col-md-9">
-            <div class="row no-gutters grid mt-50" style="position: relative; height: 825px;">
-              <div class="col-lg-4 col-sm-6 branding-4 planning-4" style="position: absolute; left: 0px; top: 0px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/1.png' %}" alt="" data-pagespeed-url-hash="1159924722" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/1.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 marketing-4 research-4" style="position: absolute; left: 275px; top: 0px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/2.png' %}" alt="" data-pagespeed-url-hash="1454424643" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/2.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 branding-4 marketing-4" style="position: absolute; left: 550px; top: 0px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/3.png' %}" alt="" data-pagespeed-url-hash="1748924564" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/3.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 planning-4 research-4" style="position: absolute; left: 0px; top: 275px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/4.png' %}" alt="" data-pagespeed-url-hash="2043424485" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/4.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 marketing-4" style="position: absolute; left: 275px; top: 275px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/5.png' %}" alt="" data-pagespeed-url-hash="2337924406" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/5.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 planning-4" style="position: absolute; left: 550px; top: 275px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/6.png' %}" alt="" data-pagespeed-url-hash="2632424327" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/6.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 research-4" style="position: absolute; left: 0px; top: 550px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/7.png' %}" alt="" data-pagespeed-url-hash="2926924248" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/7.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 branding-4 planning-4" style="position: absolute; left: 275px; top: 550px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/8.png' %}" alt="" data-pagespeed-url-hash="3221424169" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/8.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-6 marketing-4" style="position: absolute; left: 550px; top: 550px;">
-                <div class="single-portfolio">
-                  <div class="portfolio-image"> <img src="{% static 'images/portfolio/9.png' %}" alt="" data-pagespeed-url-hash="3515924090" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                      <div class="portfolio-content">
-                        <div class="portfolio-icon"> <a class="image-popup" href="{% static 'images/portfolio/9.png' %}"><i class="lni lni-zoom-in"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                        <div class="portfolio-icon"> <a href="#"><i class="lni lni-link"></i></a> <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape" class="shape"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-        </section>
+    </section>
     <!-- //portfolio section -->
 
     <!-- bg with text section -->
@@ -270,8 +344,9 @@
                     <div class="card">
                         <div class="card-header p-0 position-relative">
                             <a href="#single">
-                                <img class="card-img-bottom d-block radius-image-full" src="{% static 'images/blog1.jpg' %}"
-                                    alt="Card image cap">
+                                <img class="card-img-bottom d-block radius-image-full"
+                                     src="{% static 'images/blog1.jpg' %}"
+                                     alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body blog-details">
@@ -279,7 +354,7 @@
                             <a href="#single" class="blog-desc">Sunt in culpa qui officia dese runt mollit anim
                             </a>
                             <div class="author align-items-center mt-3 mb-1">
-                                <img src="{% static 'images/testi1.jpg' %}" alt="" class="img-fluid rounded-circle" />
+                                <img src="{% static 'images/testi1.jpg' %}" alt="" class="img-fluid rounded-circle"/>
                                 <ul class="blog-meta">
                                     <li>
                                         <a href="#single">Isabella ava</a>
@@ -297,8 +372,9 @@
                     <div class="card">
                         <div class="card-header p-0 position-relative">
                             <a href="#single">
-                                <img class="card-img-bottom d-block radius-image-full" src="{% static 'images/blog3.jpg' %}"
-                                    alt="Card image cap">
+                                <img class="card-img-bottom d-block radius-image-full"
+                                     src="{% static 'images/blog3.jpg' %}"
+                                     alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body blog-details">
@@ -306,7 +382,7 @@
                             <a href="#single" class="blog-desc">Eaque ipsa quae ab illo remos dez inve ntore
                             </a>
                             <div class="author align-items-center mt-3 mb-1">
-                                <img src="{% static 'images/testi2.jpg' %}" alt="" class="img-fluid rounded-circle" />
+                                <img src="{% static 'images/testi2.jpg' %}" alt="" class="img-fluid rounded-circle"/>
                                 <ul class="blog-meta">
                                     <li>
                                         <a href="#single">Charlotte mia</a>
@@ -324,8 +400,9 @@
                     <div class="card">
                         <div class="card-header p-0 position-relative">
                             <a href="#single">
-                                <img class="card-img-bottom d-block radius-image-full" src="{% static 'images/blog2.jpg' %}"
-                                    alt="Card image cap">
+                                <img class="card-img-bottom d-block radius-image-full"
+                                     src="{% static 'images/blog2.jpg' %}"
+                                     alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body blog-details">
@@ -333,7 +410,7 @@
                             <a href="#single" class="blog-desc">Quasi archi tecto bea dicta sunt expl icab
                             </a>
                             <div class="author align-items-center mt-3 mb-1">
-                                <img src="{% static 'images/testi3.jpg' %}" alt="" class="img-fluid rounded-circle" />
+                                <img src="{% static 'images/testi3.jpg' %}" alt="" class="img-fluid rounded-circle"/>
                                 <ul class="blog-meta">
                                     <li>
                                         <a href="#single">Charlotte mia</a>
@@ -584,7 +661,8 @@
                                     </blockquote>
                                     <div class="testi-des">
                                         <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi1.jpg' %}" alt="" class="radius-image img-fluid">
+                                            <img src="{% static 'images/testi1.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
                                         </a>
                                         <div class="peopl align-self">
                                             <h3>Dennis wilson</h3>
@@ -606,7 +684,8 @@
                                     </blockquote>
                                     <div class="testi-des">
                                         <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi2.jpg' %}" alt="" class="radius-image img-fluid">
+                                            <img src="{% static 'images/testi2.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
                                         </a>
                                         <div class="peopl align-self">
                                             <h3>Tommy sakura</h3>
@@ -628,7 +707,8 @@
                                     </blockquote>
                                     <div class="testi-des">
                                         <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi3.jpg' %}" alt="" class="radius-image img-fluid">
+                                            <img src="{% static 'images/testi3.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
                                         </a>
                                         <div class="peopl align-self">
                                             <h3>Roy Linderson</h3>
@@ -650,7 +730,8 @@
                                     </blockquote>
                                     <div class="testi-des">
                                         <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi2.jpg' %}" alt="" class="radius-image img-fluid">
+                                            <img src="{% static 'images/testi2.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
                                         </a>
                                         <div class="peopl align-self">
                                             <h3>Mike Thyson</h3>
@@ -679,11 +760,11 @@
                     <div class="col-md-7 float-rt text-md-right align-items-center mt-md-0 mt-4">
                         <ul class="buttons">
                             <li class="phone-sec"><span class="fa fa-volume-control-phone mr-1"
-                                    aria-hidden="true"></span>
+                                                        aria-hidden="true"></span>
                                 <a class="call-style-w3" href="tel:+1(23) 456 789 0000">+1(23) 456 789 0000</a>
                             </li>
                             <li class="green">Or</li>
-                            <li><a href="contact.html" class="btn btn-style">Get in touch</a> </li>
+                            <li><a href="contact.html" class="btn btn-style">Get in touch</a></li>
                         </ul>
                     </div>
                 </div>
@@ -697,4 +778,18 @@
     <!-- 图片平滑切换显示 -->
     <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
     <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script>
+        $('.container').imagesLoaded(function () {
+            var $grid = $('.grid').isotope({transitionDuration: '1s'});
+            $('.portfolio-menu ul').on('click', 'li', function () {
+                var filterValue = $(this).attr('data-filter');
+                $grid.isotope({filter: filterValue});
+            });
+            $('.portfolio-menu ul li').on('click', function (event) {
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+                event.preventDefault();
+            });
+        });
+    </script>
 {% endblock %}
