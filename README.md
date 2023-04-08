@@ -8,7 +8,7 @@ zueltsxy展示网站
 3. `pip list --format=freeze > requirements.txt`在项目目录创建环境的requirements.txt文件
 4. `django-admin startproject PROJECT_NAME`
 
-## 模板设计(使用房源的模板)
+## 模板设计(使用节日的模板)
 
 1. base
 2. header
@@ -42,10 +42,32 @@ zueltsxy展示网站
 
 ## 页面设计
 
-1. index
-2. intro应用（markdown排版）:包括自我介绍和模型介绍，然后把请求绑定到新建的页面（简单来说就是两个introduce app里的文章页）
-3. dashboard页面
-4. contact
+### index主页
+
+1. banner
+2. 梧桐树品牌介绍（网站的description及主旨介绍）
+3. 下设版块（图片banner+图片平滑切换面板）
+
+![img.png](README-imgs/img.png)
+
+![img.png](README-imgs/img2.png)
+
+### 各下设版块的内容详情页
+
+![img.png](README-imgs/img3.png)
+
+### 各职能机构的介绍页 
+
+考虑使用原始模板的about us页面
+
+![img.png](README-imgs/img4.png)
+
+## 模型抽象
+1. banner抽象（图片链接、图片名称）
+2. site抽象
+3. 版块抽象（banner、标签等）
+4. 职能机构抽象
+5. 
 
 ## 创建一个新页面的一般步骤
 
