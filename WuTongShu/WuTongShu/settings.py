@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 网站主体的介绍功能都将封装在details这个app里
+    'details',
 ]
 
 MIDDLEWARE = [
