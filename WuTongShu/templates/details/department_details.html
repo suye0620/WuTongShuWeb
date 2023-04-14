@@ -1,0 +1,340 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block banner %}
+    <!-- inner banner -->
+    <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">About Us</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>About Us</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- //inner banner -->
+{% endblock %}
+
+{% block contents %}
+    <!-- services section -->
+    <section class="w3l-content-11-main position-relative">
+        <div class="content-design-11 py-5">
+            <div class="container py-md-5 py-4">
+                <h3 class="title-style text-center mb-md-5 mb-4">We Provide Best Services</h3>
+                <div class="content-sec-11">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s3.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">Awesome Design</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s1.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">Organised</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4 mb-lg-0">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s2.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">We are the best</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services-single d-flex p-sm-5 p-4 mb-0">
+                                <div class="service-icon mr-sm-4 mr-3">
+                                    <img src="{% static 'images/s4.png' %}" alt="" class="img-fluid">
+                                </div>
+                                <div class="services-content">
+                                    <h5><a href="services.html">Creativity</a></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas magna at
+                                        porttitor vehicula nullam augue ipsum dolor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <a class="btn btn-style" href="services.html">Learn More Services</a>
+                    </div>
+                </div>
+            </div>
+            <!-- balloon animation -->
+            <div class="circle">
+
+            </div>
+            <!-- balloon animation -->
+            <div class="animation-2">
+
+            </div>
+        </div>
+    </section>
+    <!-- //services section -->
+
+    <!-- team sections -->
+    <section class="w3l-team-main" id="team">
+        <div class="team py-5">
+            <div class="container py-md-5 py-4">
+                <div class="waviy white-text text-center mb-sm-5 mb-4">
+                    <span style="--i:1">O</span>
+                    <span style="--i:2">u</span>
+                    <span style="--i:3">r</span>
+                    <span style="--i:4"></span>
+                    <span style="--i:5">T</span>
+                    <span style="--i:6">e</span>
+                    <span style="--i:7">a</span>
+                    <span style="--i:8">m</span>
+                    <span style="--i:9"></span>
+                    <span style="--i:10">M</span>
+                    <span style="--i:11">e</span>
+                    <span style="--i:12">m</span>
+                    <span style="--i:13">b</span>
+                    <span style="--i:14">e</span>
+                    <span style="--i:15">r</span>
+                    <span style="--i:16">s</span>
+                </div>
+                <!-- fireworks effect -->
+                <div class="pyro">
+                    <div class="before"></div>
+                    <div class="after"></div>
+                </div>
+                <div class="row team-row mt-md-5 mt-4">
+                    <div class="col-lg-3 col-6 team-wrap">
+                        <div class="team-member text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team1.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Lyn Victor</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                    <div class="col-lg-3 col-6 team-wrap">
+                        <div class="team-member text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team2.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Meyer Lson</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                    <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
+                        <div class="team-member last text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team3.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Lyn Meyer</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                    <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
+                        <div class="team-member last text-center">
+                            <div class="team-img">
+                                <img src="{% static 'images/team4.jpg' %}" alt="" class="radius-image">
+                            </div>
+                            <a href="#url" class="team-title">Sam Mills</a>
+                            <div class="team-details text-center">
+                                <div class="socials mt-20">
+                                    <a href="#url">
+                                        <span class="fa fa-facebook-f"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-twitter"></span>
+                                    </a>
+                                    <a href="#url">
+                                        <span class="fa fa-instagram"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end team member -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //team sections -->
+
+    <!-- testimonials -->
+    <section class="w3l-clients-1" id="testimonials">
+        <div class="cusrtomer-layout py-5">
+            <div class="container py-md-5 py-4">
+                <div class="waviy text-center mb-sm-5 mb-4">
+                    <span style="--i:1">W</span>
+                    <span style="--i:2">h</span>
+                    <span style="--i:3">a</span>
+                    <span style="--i:4">t</span>
+                    <span style="--i:5"></span>
+                    <span style="--i:6">P</span>
+                    <span style="--i:7">e</span>
+                    <span style="--i:8">o</span>
+                    <span style="--i:1">p</span>
+                    <span style="--i:2">l</span>
+                    <span style="--i:3">e</span>
+                    <span style="--i:4"></span>
+                    <span style="--i:5">S</span>
+                    <span style="--i:6">a</span>
+                    <span style="--i:7">y</span>
+                </div>
+                <div class="testimonial-row">
+                    <div id="owl-demo2" class="owl-two owl-carousel owl-theme mb-md-3 mb-sm-5 mb-4">
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi1.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Dennis wilson</h3>
+                                            <p class="identity">Customer </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi2.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Tommy sakura</h3>
+                                            <p class="identity">Customer </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi3.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Roy Linderson</h3>
+                                            <p class="identity">Customer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonial-content">
+                                <div class="testimonial">
+                                    <blockquote>
+                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
+                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
+                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
+                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
+                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                    </blockquote>
+                                    <div class="testi-des">
+                                        <a href="#url" class="testi-img">
+                                            <img src="{% static 'images/testi2.jpg' %}" alt=""
+                                                 class="radius-image img-fluid">
+                                        </a>
+                                        <div class="peopl align-self">
+                                            <h3>Mike Thyson</h3>
+                                            <p class="identity">Customer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //testimonials -->
+
+{% endblock %}
