@@ -63,14 +63,16 @@ zueltsxy展示网站
 ![img.png](README-imgs/img4.png)
 
 ## 模型抽象
-1. banner抽象（图片链接、图片名称）
+1. banner抽象（图片链接、图片名称）(√)
 2. site抽象(√)
 3. 版块抽象（banner、标签等）(√)
 4. 职能机构抽象(√)
-5. 
 
 ## 创建一个新页面的一般步骤
 
 template → view → url → model(→admin→setting) → url → view → template
+
+其中，admin细节为在admin.py文件中注册自己设计的模型；setting细节为自定义后台admin界面。
+
 
 ## TODO

@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -24,13 +23,15 @@ SECRET_KEY = 'django-insecure-n@y4i^a%ij^f=3ii+t520cdy+yyb5j=zm#@#k)0ljh_2mqyv7y
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 后台UI美化
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 网站主体的介绍功能都将封装在details这个app里
     'details',
+    # 数据导出导入插件
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -73,17 +76,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WuTongShu.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+        'NAME': 'TSXYwts',  # 数据库名，Django不会帮你创建，需要自己进入数据库创建。
+        'USER': 'root',  # 设置的数据库用户名
+        'PASSWORD': '112335ABC',  # 设置的密码
+        'HOST': 'localhost',  # 本地主机或数据库服务器的ip
+        'PORT': '3306',  # 数据库使用的端口
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -103,20 +112,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_L10N = True
-
-USE_TZ = True
-
+USE_L10N = False
+# Must set False below, otherwise will set the timezone invalidly
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -130,3 +137,59 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# the settings of SimpleUI
+# https://simpleui.72wo.com/docs/simpleui/QUICK.html
+SIMPLEUI_LOGO = '/static/images/favicon.ico'  # 登录页和后台logo
+SIMPLEUI_ANALYSIS = False  # 是否向SimpleUi收集分析信息
+SIMPLEUI_LOADING = False  # 是否打开Loading遮罩层
+SIMPLEUI_LOGIN_PARTICLES = True  # 登录页粒子动画
+SIMPLEUI_STATIC_OFFLINE = True  # 是否以脱机模式加载静态资源，为True的时候将默认从本地读取所有资源，即使没有联网一样可以。适合内网项目，不填该项或者为False的时候，默认从第三方的cdn获取
+SIMPLEUI_HOME_INFO = False  # 是否打开SimpleUi服务器信息
+SIMPLEUI_DEFAULT_THEME = 'simpleui.css'  # 默认主题 https://simpleui.88cto.com/docs/simpleui/QUICK.html#%E9%BB%98%E8%AE%A4%E4%B8%BB%E9%A2%98
+SIMPLEUI_HOME_QUICK = True  # 后台页面是否显示最近动作
+SIMPLEUI_CONFIG = {
+    'system_keep': False,  # 去除系统模块
+    'menus': [{
+        'name': '文章管理',
+        'icon': 'fas fa-book-open',
+        'models': [{
+            'name': '文章',
+            'icon': 'fas fa-book-open',
+            'url': '/admin/details/article/'
+        }, {
+            'name': '品牌分类',
+            'icon': 'fas fa-list',
+            'url': '/admin/details/category/'
+        }, {
+            'name': '活动标签',
+            'icon': 'fas fa-tags',
+            'url': '/admin/details/tag/'
+        }]
+    }, {
+        'name': '部门',
+        'icon': 'fas fa-user-friends',
+        'url': '/admin/details/department/'
+    }, {
+        'name': '首页横幅',
+        'icon': 'far fa-images',
+        'url': '/admin/details/banner/'
+    }, {
+        'name': '网站设置',
+        'icon': 'fas fa-globe-americas',
+        'url': '/admin/details/site/'
+    }, {
+        'app': 'auth',
+        'name': '用户和授权',
+        'icon': 'fas fa-user-shield',
+        'models': [{
+            'name': '用户',
+            'icon': 'fa fa-user',
+            'url': 'auth/user/'
+        }, {
+            'name': '权限组',
+            'icon': 'fas fa-users-cog',
+            'url': 'auth/group/'
+        }]
+    }]
+}
