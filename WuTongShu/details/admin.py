@@ -25,7 +25,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'get_items']
+    list_display = ['id', 'name', 'add_to_index', 'get_items']
+    list_editable = ['name', 'add_to_index']
     search_fields = ('name',)
 
 

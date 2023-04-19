@@ -70,6 +70,7 @@ class Category(models.Model):
 class Tag(models.Model):
     """标签"""
     name = models.CharField(max_length=20, verbose_name='标签名称')
+    add_to_index = models.BooleanField(default=False, verbose_name='添加到首页')
 
     class Meta:
         verbose_name = '标签'

@@ -76,3 +76,7 @@ template → view → url → model(→admin→setting) → url → view → tem
 
 
 ## TODO
+
+1. 生成测试文章用于开发后续功能
+2. 看一下图片切换的js使用
+3. 把所有的标签先导进去
