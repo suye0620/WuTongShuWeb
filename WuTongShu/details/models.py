@@ -90,7 +90,7 @@ class Article(models.Model):
     """文章"""
     title = models.CharField(max_length=50, verbose_name='文章标题')
     author = models.CharField(max_length=10, verbose_name='作者', default='作者', blank=True, null=True)
-    desc = models.CharField(max_length=50, verbose_name='文章描述')
+    desc = models.CharField(max_length=100, verbose_name='文章描述')
     cover = models.URLField(max_length=200, default='http://42.193.14.111/static/upload/tsxywts/%E6%99%9A%E9%9C%9E.jpg',
                             verbose_name='文章封面')
 
@@ -119,6 +119,11 @@ class Article(models.Model):
         return format_html('<img src="{}" width="200px" height="150px"/>', self.cover, )
 
     cover_preview.short_description = '文章封面预览'
+
+    def cover_square_preview(self):
+        return format_html('<img src="{}" width="200px" height="200px"/>', self.cover_square, )
+
+    cover_square_preview.short_description = '首页方形封面预览'
 
     def __str__(self):
         return self.title  # 将文章标题返回
