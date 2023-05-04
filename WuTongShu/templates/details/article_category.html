@@ -4,17 +4,17 @@
 
 {% block css %}
     <style>
-    .inner-banner {
-        background: url({{ category.banner }}) no-repeat top;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        -ms-background-size: cover;
-        min-height: 300px;
-        position: relative;
-        z-index: 1;
-    }
+        .inner-banner {
+            background: url({{ category.banner }}) no-repeat top;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -ms-background-size: cover;
+            min-height: 300px;
+            position: relative;
+            z-index: 1;
+        }
     </style>
 {% endblock %}
 {% block banner %}
@@ -25,7 +25,8 @@
                 <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">品牌</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="{% url 'index' %}">Home</a></li>
-                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>{{category.name}}</li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2"
+                                             aria-hidden="true"></span>{{ category.name }}</li>
                 </ul>
             </div>
         </section>
@@ -58,7 +59,7 @@
             </div>
 
             <div class="row">
-                {% for article in articles %}
+                {% for article in page_obj %}
                     {% if forloop.counter0|mod:3 == 0 %}
                         <div class="col-lg-4 col-md-6 item">
                             <div class="card">
@@ -70,18 +71,21 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{% for tag in article.tag.all %}{{ tag }}{% endfor %}</span><br>
+                                    <span class="label-blue">{% for tag in article.tag.all %}
+                                        {{ tag }}{% endfor %}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
-                                        <img src="{% static 'images/testi1.jpg' %}" alt="" class="img-fluid rounded-circle"/>
+                                        <img src="{% static 'images/testi1.jpg' %}" alt=""
+                                             class="img-fluid rounded-circle"/>
                                         <ul class="blog-meta">
                                             <li>
                                                 <a href="#single">{{ article.author }}</a>
                                             </li>
                                             <li class="meta-item blog-lesson">
-                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>. <span
-                                                    class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
+                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>.
+                                                <span
+                                                        class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -100,18 +104,21 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{% for tag in article.tag.all %}{{ tag }}{% endfor %}</span><br>
+                                    <span class="label-blue">{% for tag in article.tag.all %}
+                                        {{ tag }}{% endfor %}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
-                                        <img src="{% static 'images/testi1.jpg' %}" alt="" class="img-fluid rounded-circle"/>
+                                        <img src="{% static 'images/testi1.jpg' %}" alt=""
+                                             class="img-fluid rounded-circle"/>
                                         <ul class="blog-meta">
                                             <li>
                                                 <a href="#single">{{ article.author }}</a>
                                             </li>
                                             <li class="meta-item blog-lesson">
-                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>. <span
-                                                    class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
+                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>.
+                                                <span
+                                                        class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -130,18 +137,21 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{% for tag in article.tag.all %}{{ tag }}{% endfor %}</span><br>
+                                    <span class="label-blue">{% for tag in article.tag.all %}
+                                        {{ tag }}{% endfor %}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
-                                        <img src="{% static 'images/testi1.jpg' %}" alt="" class="img-fluid rounded-circle"/>
+                                        <img src="{% static 'images/testi1.jpg' %}" alt=""
+                                             class="img-fluid rounded-circle"/>
                                         <ul class="blog-meta">
                                             <li>
                                                 <a href="#single">{{ article.author }}</a>
                                             </li>
                                             <li class="meta-item blog-lesson">
-                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>. <span
-                                                    class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
+                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>.
+                                                <span
+                                                        class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -149,10 +159,65 @@
                             </div>
                         </div>
                         <!-- 用于闭合标签 -->
-                        </div><div class="row">
+                        </div>
+                        <div class="row">
                     {% endif %}
                 {% endfor %}
-            </div>
+                </div>
+            {% if is_paginated %}
+                <nav aria-label="Page navigation">
+                    <form class="" action="{% url 'article_category' category.id %}" method="GET">
+                        <label for="input-data">页数：</label>
+                        <input type="text" id="input-data" name="page">
+                        <button type="submit" class="btn">跳转</button>
+                    </form>
+                    <ul class="pagination justify-content-end">
+                        {% if page_obj.has_previous %}
+                            {% if page_obj.previous_page_number > 1 %}
+                                <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
+                            {% endif %}
+                            {% if page_obj.previous_page_number > 2 %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="?page={{ page_obj.previous_page_number|add:"-2" }}">{{ page_obj.previous_page_number|add:"-2" }}</a>
+                                </li>
+                            {% endif %}
+                            {% if page_obj.previous_page_number > 1 %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="?page={{ page_obj.previous_page_number }}">&lsaquo;</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if num == page_obj.number %}
+                                <li class="page-item active"><a class="page-link" href="#">{{ num }} <span
+                                        class="sr-only">(current)</span></a></li>
+                            {% elif num > page_obj.number|add:"-2" and num < page_obj.number|add:"2" %}
+                                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            {% if page_obj.next_page_number < page_obj.paginator.num_pages %}
+                                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&rsaquo;</a>
+                                </li>
+                            {% endif %}
+                            {% if page_obj.next_page_number < page_obj.paginator.num_pages|add:"-1" %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="?page={{ page_obj.next_page_number|add:"2" }}">{{ page_obj.next_page_number|add:"2" }}</a>
+                                </li>
+                            {% endif %}
+                            {% if page_obj.next_page_number < page_obj.paginator.num_pages %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+
+
         </div>
     </div>
     <!-- //blog section -->

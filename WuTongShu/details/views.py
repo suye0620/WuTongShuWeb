@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Banner, Category, Site
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
@@ -34,10 +35,25 @@ def article_category(request, id):
     """文章分类详情页"""
     category = Category.objects.get(id=id)
     articles = Category.objects.get(id=id).article_set.all()  # 获取该id对应的所有的文章
+
+    paginator = Paginator(articles, 9)  # 实例化一个分页对象, 每页显示10个
+    page = request.GET.get('page')  # 从URL通过get页码，如?page=3
+
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)  # 如果传入page参数不是整数，默认第一页
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
+    is_paginated = True if paginator.num_pages > 1 else False  # 如果页数小于1不使用分页
     context = {
         'category': category,
         'id': id,
-        'articles': articles
+        'page_obj': page_obj,
+        'is_paginated': is_paginated,
+        'querystring': request.GET.urlencode(),
+        'max_page_num_before': 2,
+        'max_page_num_after': 2
     }
     return render(request, 'details/article_category.html', context=context)
 

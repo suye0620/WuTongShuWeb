@@ -5311,14 +5311,14 @@ input[type="button"].btn-block {
     padding: 0.5rem 0.75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #ff4c4c;
+    color: var(--primary-color);
     background-color: #fff;
     border: 1px solid #dee2e6;
 }
 
 .page-link:hover {
     z-index: 2;
-    color: #208c60;
+    color: var(--secondary-color);
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6;
@@ -5344,8 +5344,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #ff4c4c;
-    border-color: #ff4c4c;
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
 }
 
 .page-item.disabled .page-link {
