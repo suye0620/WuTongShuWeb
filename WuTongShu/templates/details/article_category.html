@@ -2,6 +2,21 @@
 {% load static %}
 {% load extras %}
 
+{% block css %}
+    <style>
+    .inner-banner {
+        background: url({{ category.banner }}) no-repeat top;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -ms-background-size: cover;
+        min-height: 300px;
+        position: relative;
+        z-index: 1;
+    }
+    </style>
+{% endblock %}
 {% block banner %}
     <!-- inner banner -->
     <div class="inner-banner">
@@ -55,7 +70,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{{ article.tag }}</span>
+                                    <span class="label-blue">{% for tag in article.tag.all %}{{ tag }}{% endfor %}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
@@ -65,7 +80,7 @@
                                                 <a href="#single">{{ article.author }}</a>
                                             </li>
                                             <li class="meta-item blog-lesson">
-                                                <span class="meta-value"> {{ article.update_time|date:"D, M d Y" }} </span>. <span
+                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>. <span
                                                     class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
                                             </li>
                                         </ul>
@@ -85,7 +100,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{{ article.tag }}</span>
+                                    <span class="label-blue">{% for tag in article.tag.all %}{{ tag }}{% endfor %}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
@@ -95,7 +110,7 @@
                                                 <a href="#single">{{ article.author }}</a>
                                             </li>
                                             <li class="meta-item blog-lesson">
-                                                <span class="meta-value"> {{ article.update_time|date:"D, M d Y" }} </span>. <span
+                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>. <span
                                                     class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
                                             </li>
                                         </ul>
@@ -115,7 +130,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{{ article.tag }}</span>
+                                    <span class="label-blue">{% for tag in article.tag.all %}{{ tag }}{% endfor %}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
@@ -125,7 +140,7 @@
                                                 <a href="#single">{{ article.author }}</a>
                                             </li>
                                             <li class="meta-item blog-lesson">
-                                                <span class="meta-value"> {{ article.update_time|date:"D, M d Y" }} </span>. <span
+                                                <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>. <span
                                                     class="meta-value ml-2"><span class="fa fa-clock-o"></span> 1 min</span>
                                             </li>
                                         </ul>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Banner, Category
+from .models import Banner, Category, Site
 
 
 # Create your views here.
@@ -40,3 +40,27 @@ def article_category(request, id):
         'articles': articles
     }
     return render(request, 'details/article_category.html', context=context)
+
+
+def global_params(request):
+    """全局变量"""
+    category_nav = Category.objects.filter(add_menu=True).order_by('index')
+    site_name = Site.objects.first().site_name
+    keywords = Site.objects.first().keywords
+    logo = Site.objects.first().logo
+    desc = Site.objects.first().desc
+    slogan = Site.objects.first().slogan
+    dynamic_slogan = Site.objects.first().dynamic_slogan
+    icp_number = Site.objects.first().icp_number
+    icp_url = Site.objects.first().icp_url
+    return {
+        'category_nav': category_nav,
+        'SITE_NAME': site_name,
+        'KEYWORDS': keywords,
+        'LOGO': logo,
+        'DESC': desc,
+        'SLOGAN': slogan,
+        'DYNAMIC_SLOGAN': dynamic_slogan,
+        'ICP_NUMBER': icp_number,
+        'ICP_URL': icp_url,
+    }

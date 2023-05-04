@@ -108,7 +108,7 @@ class Article(models.Model):
     # 文章更新时间。参数 auto_now=True 指定每次数据更新时自动写入当前时间
     update_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
     category = models.ForeignKey(Category, blank=True, null=True, verbose_name='文章分类', on_delete=models.CASCADE)
-    tag = models.ManyToManyField(Tag, blank=True, verbose_name='文章标签')
+    tag = models.ManyToManyField(Tag, blank=True, null=True,verbose_name='文章标签')
 
     class Meta:
         verbose_name = '文章'
