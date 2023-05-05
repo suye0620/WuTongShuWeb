@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Banner, Category, Site
+from .models import Banner, Category, Site, Department
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -11,7 +11,11 @@ def brand_details(request):
 
 def department_details(request):
     # render introduction pages for different administrative departments
-    return render(request, "details/department_details.html")
+    departments = Department.objects.all()
+    context = {
+        'departments': departments
+    }
+    return render(request, "details/department_details.html", context)
 
 
 def index(request):

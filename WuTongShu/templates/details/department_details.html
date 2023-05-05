@@ -152,13 +152,13 @@
                             <div class="team-details text-center">
                                 <div class="socials mt-20">
                                     <a href="#url">
-                                        <span class="fa fa-facebook-f"></span>
+                                        <span class="fa-r fa-facebook-f"></span>
                                     </a>
                                     <a href="#url">
-                                        <span class="fa fa-twitter"></span>
+                                        <span class="fa-b fa-twitter"></span>
                                     </a>
                                     <a href="#url">
-                                        <span class="fa fa-instagram"></span>
+                                        <span class="fa-b fa-instagram"></span>
                                     </a>
                                 </div>
                             </div>
@@ -238,98 +238,27 @@
                 </div>
                 <div class="testimonial-row">
                     <div id="owl-demo2" class="owl-two owl-carousel owl-theme mb-md-3 mb-sm-5 mb-4">
-                        <div class="item">
+                        {% for department in departments %}
+                            <div class="item">
                             <div class="testimonial-content">
                                 <div class="testimonial">
                                     <blockquote>
-                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
-                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
+                                        <q>{{ department.desc }}</q>
                                     </blockquote>
                                     <div class="testi-des">
-                                        <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi1.jpg' %}" alt=""
+                                        <a href="{{ department.url }}" class="testi-img">
+                                            <img src="{{ department.avatar }}" alt=""
                                                  class="radius-image img-fluid">
                                         </a>
                                         <div class="peopl align-self">
-                                            <h3>Dennis wilson</h3>
-                                            <p class="identity">Customer </p>
+                                            <h3>{{ department.name }}</h3>
+                                            <a href="{{ department.url }}" class="btn btn-style">{{ department.button_word }}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
-                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi2.jpg' %}" alt=""
-                                                 class="radius-image img-fluid">
-                                        </a>
-                                        <div class="peopl align-self">
-                                            <h3>Tommy sakura</h3>
-                                            <p class="identity">Customer </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
-                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi3.jpg' %}" alt=""
-                                                 class="radius-image img-fluid">
-                                        </a>
-                                        <div class="peopl align-self">
-                                            <h3>Roy Linderson</h3>
-                                            <p class="identity">Customer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-content">
-                                <div class="testimonial">
-                                    <blockquote>
-                                        <q>Lorem ipsum dolor sit amet int consectetur adipisicing elit. Velita beatae
-                                            laudantium Quas minima sunt natus tempore, maiores aliquid modi felis vitae
-                                            facere aperiam sequi optio lacinia id ipsum non velit, culpa.
-                                            voluptate rem ullam dolore nisi est quasi, doloribus tempora.
-                                            est elit. Non quae, fugiat ad libero justo sed amet.</q>
-                                    </blockquote>
-                                    <div class="testi-des">
-                                        <a href="#url" class="testi-img">
-                                            <img src="{% static 'images/testi2.jpg' %}" alt=""
-                                                 class="radius-image img-fluid">
-                                        </a>
-                                        <div class="peopl align-self">
-                                            <h3>Mike Thyson</h3>
-                                            <p class="identity">Customer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
