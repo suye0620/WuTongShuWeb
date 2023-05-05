@@ -3,6 +3,12 @@ from .models import Banner, Category, Site, Department
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
+def duplicate(one_list: list):
+    new_list = list(set(one_list))
+    new_list.sort(key=one_list.index)
+    return new_list
+
+
 # Create your views here.
 def brand_details(request):
     # render introduction pages for different student-work brands
@@ -27,10 +33,15 @@ def index(request):
 
         # 取出所有品牌
         categories = Category.objects.all()
+
+        category0_articles = categories[0].article_set.filter(is_recommend=True).all()
+        tags_category0_articles = duplicate([article.tag.first() for article in category0_articles])
         # 需要传递给模板（templates）的对象
         context = {
             'all_banners': str_banners,
             'categories': categories,
+            'test_category': categories[0],
+            'tag_category0_articles': tags_category0_articles,
         }
     return render(request, "index.html", context=context)
 
