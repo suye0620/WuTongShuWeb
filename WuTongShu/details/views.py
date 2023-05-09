@@ -35,13 +35,18 @@ def index(request):
         categories = Category.objects.all()
 
         category0_articles = categories[0].article_set.filter(is_recommend=True).all()
+
         tags_category0_articles = duplicate([article.tag.first() for article in category0_articles])
+        dict_tag2filter = {}
+        for count,tag in enumerate(tags_category0_articles):
+            dict_tag2filter[tag] = "filter-0-{}".format(count)
         # 需要传递给模板（templates）的对象
         context = {
             'all_banners': str_banners,
             'categories': categories,
-            'test_category': categories[0],
+            'test_category': category0_articles,
             'tag_category0_articles': tags_category0_articles,
+            'dict_tag2filter': dict_tag2filter
         }
     return render(request, "index.html", context=context)
 

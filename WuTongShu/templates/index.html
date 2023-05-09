@@ -1,5 +1,6 @@
 {% extends 'layout/base.html' %}
 {% load static %}
+{% load extras %}
 
 {% block banner %}
     <!-- banner section -->
@@ -155,8 +156,8 @@
                         <!-- 其实这里的portfolio-menu在css样式表中并未定义，所有颜色等样式值是对后继子元素直接定义的。所以portfolio-menu只是起到了一个“定位元素”的作用 -->
                         <ul>
                             <li data-filter="*" class="active">ALL WORK</li>
-                            {% for tag_category0_article in tag_category0_articles %}
-                                <li data-filter=".branding-4">{{ tag_category0_article }}</li>
+                            {% for tag in tag_category0_articles %}
+                                <li data-filter="{{ dict_tag2filter | gv:tag }}">{{ tag }}</li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -219,168 +220,189 @@
                 </style>
                 <div class="col-lg-9 col-md-9">
                     <div class="row no-gutters grid mt-50" style="position: relative; height: 825px;">
-                        <div class="col-lg-4 col-sm-6 branding-4 planning-4 sub-pic-position-1">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/1.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/1.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
+                        {% for article in test_category %}
+                            <div class="col-lg-4 col-sm-6 {{ dict_tag2filter | gv:article.tag.first }} sub-pic-position-{{ forloop.counter }}">
+                                <div class="single-portfolio">
+                                    <div class="portfolio-image"><img src="{{ article.cover_square }}" alt="">
+                                        <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                            <div class="portfolio-content">
+                                                <div class="portfolio-icon"><a class="image-popup"
+                                                                               href="{{ article.cover_square }}"><i
+                                                        class="lni lni-zoom-in"></i></a> <img
+                                                        src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                        class="shape"></div>
+                                                <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
+                                                    <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
+                                                         class="shape"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 marketing-4 research-4 sub-pic-position-2">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/2.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/2.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 branding-4 marketing-4 sub-pic-position-3">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/3.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/3.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 planning-4 research-4 sub-pic-position-4" >
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/4.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/4.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 marketing-4 sub-pic-position-5">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/5.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/5.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 planning-4 sub-pic-position-6">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/6.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/6.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 research-4 sub-pic-position-7">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/7.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/7.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 branding-4 planning-4 sub-pic-position-8">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/8.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/8.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 marketing-4 sub-pic-position-9">
-                            <div class="single-portfolio">
-                                <div class="portfolio-image"><img src="{% static 'images/portfolio/9.png' %}" alt="">
-                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">
-                                        <div class="portfolio-content">
-                                            <div class="portfolio-icon"><a class="image-popup"
-                                                                           href="{% static 'images/portfolio/9.png' %}"><i
-                                                    class="lni lni-zoom-in"></i></a> <img
-                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                    class="shape"></div>
-                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>
-                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"
-                                                     class="shape"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+
+{#                        <div class="col-lg-4 col-sm-6 branding-4 planning-4 sub-pic-position-1">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/1.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/1.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 marketing-4 research-4 sub-pic-position-2">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/2.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/2.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 branding-4 marketing-4 sub-pic-position-3">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/3.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/3.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 planning-4 research-4 sub-pic-position-4" >#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/4.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/4.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 marketing-4 sub-pic-position-5">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/5.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/5.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 planning-4 sub-pic-position-6">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/6.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/6.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 research-4 sub-pic-position-7">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/7.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/7.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 branding-4 planning-4 sub-pic-position-8">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/8.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/8.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-lg-4 col-sm-6 marketing-4 sub-pic-position-9">#}
+{#                            <div class="single-portfolio">#}
+{#                                <div class="portfolio-image"><img src="{% static 'images/portfolio/9.png' %}" alt="">#}
+{#                                    <div class="portfolio-overlay d-flex align-items-center justify-content-center">#}
+{#                                        <div class="portfolio-content">#}
+{#                                            <div class="portfolio-icon"><a class="image-popup"#}
+{#                                                                           href="{% static 'images/portfolio/9.png' %}"><i#}
+{#                                                    class="lni lni-zoom-in"></i></a> <img#}
+{#                                                    src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                    class="shape"></div>#}
+{#                                            <div class="portfolio-icon"><a href="#"><i class="lni lni-link"></i></a>#}
+{#                                                <img src="{% static 'images/portfolio/shape.svg' %}" alt="shape"#}
+{#                                                     class="shape"></div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
                     </div>
                 </div>
             </div>
