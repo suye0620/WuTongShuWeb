@@ -34,19 +34,37 @@ def index(request):
         # 取出所有品牌
         categories = Category.objects.all()
 
+        list_items_categories = []
+        for category_count, category in enumerate(categories):
+            recommended_articles_of_the_category = category.article_set.filter(is_recommend=True).all()
+            tags_of_recommended_articles = duplicate(
+                [article.tag.first() for article in recommended_articles_of_the_category])
+            dict_tag2filter = {}
+            for tag_count, tag in enumerate(tags_of_recommended_articles):
+                # format函数：https://blog.csdn.net/xyx_x/article/details/90202813
+                dict_tag2filter[tag] = "filter-{category_count}-{tag_count}".format(category_count=category_count,
+                                                                                    tag_count=tag_count)
+            list_items_categories.append({
+                'category': category,
+                'recommended_articles_of_the_category': recommended_articles_of_the_category,
+                'tags_of_recommended_articles': tags_of_recommended_articles,
+                'dict_tag2filter': dict_tag2filter
+            })
+
         category0_articles = categories[0].article_set.filter(is_recommend=True).all()
 
         tags_category0_articles = duplicate([article.tag.first() for article in category0_articles])
         dict_tag2filter = {}
-        for count,tag in enumerate(tags_category0_articles):
+        for count, tag in enumerate(tags_category0_articles):
             dict_tag2filter[tag] = "filter-0-{}".format(count)
         # 需要传递给模板（templates）的对象
         context = {
             'all_banners': str_banners,
             'categories': categories,
+            'list_items_categories': list_items_categories,
             'test_category': category0_articles,
             'tag_category0_articles': tags_category0_articles,
-            'dict_tag2filter': dict_tag2filter
+            'dict_tag2filter': dict_tag2filter,
         }
     return render(request, "index.html", context=context)
 

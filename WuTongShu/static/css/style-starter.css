@@ -13248,6 +13248,7 @@ h3.video-title {
 
 /* bg with text section */
 .w3l-covers-14 {
+    /*封面修改点*/
     background: url("../images/banner1.jpg") no-repeat center fixed;
     background-size: cover;
     -webkit-background-size: cover;
