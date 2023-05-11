@@ -157,7 +157,7 @@
                         <ul>
                             <li data-filter="*" class="active">ALL WORK</li>
                             {% for tag in tag_category0_articles %}
-                                <li data-filter="{{ dict_tag2filter | gv:tag }}">{{ tag }}</li>
+                                <li data-filter=".{{ dict_tag2filter | gv:tag }}">{{ tag }}</li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -219,7 +219,7 @@
                     }
                 </style>
                 <div class="col-lg-9 col-md-9">
-                    <div class="row no-gutters grid mt-50" style="position: relative; height: 825px;">
+                    <div class="row no-gutters grid-1 mt-50" style="position: relative; height: 825px;">
                         {% for article in test_category %}
                             <div class="col-lg-4 col-sm-6 {{ dict_tag2filter | gv:article.tag.first }} sub-pic-position-{{ forloop.counter }}">
                                 <div class="single-portfolio">
@@ -647,12 +647,23 @@
     <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
     <script>
         $('.container').imagesLoaded(function () {
+            var $grid1 = $('.grid-1').isotope({transitionDuration: '1s'});
+            $('.portfolio-menu-2 ul').on('click', 'li', function () {
+                var filterValue = $(this).attr('data-filter');
+                $grid1.isotope({filter: filterValue});
+            });
+            $('.portfolio-menu-2 ul li').on('click', function (event) {
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+                event.preventDefault();
+            });
+
             var $grid = $('.grid').isotope({transitionDuration: '1s'});
-            $('.portfolio-menu ul').on('click', 'li', function () {
+            $('.portfolio-menu-1 ul').on('click', 'li', function () {
                 var filterValue = $(this).attr('data-filter');
                 $grid.isotope({filter: filterValue});
             });
-            $('.portfolio-menu ul li').on('click', function (event) {
+            $('.portfolio-menu-1 ul li').on('click', function (event) {
                 $(this).siblings('.active').removeClass('active');
                 $(this).addClass('active');
                 event.preventDefault();
