@@ -38,7 +38,7 @@
     <!-- blog section -->
     <div class="blog-section py-5">
         <div class="container py-md-5 py-4">
-            <div class="waviy text-center mb-md-5 mb-4">
+            <div class="waviy text-center mb-md-2 mb-2">
                 <span style="--i:1">O</span>
                 <span style="--i:2">u</span>
                 <span style="--i:3">r</span>
@@ -57,7 +57,9 @@
                 <span style="--i:8">t</span>
                 <span style="--i:9">s</span>
             </div>
-
+            {% for distinct_article in tags_of_articles %}
+                <a href="?tag=1" class="btn btn-style">{{ distinct_article.tag }}</a>
+            {% endfor %}
             <div class="row">
                 {% for article in page_obj %}
                     {% if forloop.counter0|mod:3 == 0 %}
@@ -71,8 +73,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{% for tag in article.tag.all %}
-                                        {{ tag }}{% endfor %}</span><br>
+                                    <span class="label-blue">{{ article.tag }}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
@@ -104,8 +105,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{% for tag in article.tag.all %}
-                                        {{ tag }}{% endfor %}</span><br>
+                                    <span class="label-blue">{{ article.tag }}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
@@ -137,8 +137,7 @@
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
-                                    <span class="label-blue">{% for tag in article.tag.all %}
-                                        {{ tag }}{% endfor %}</span><br>
+                                    <span class="label-blue">{{ article.tag }}</span><br>
                                     <a href="#single" class="blog-desc">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">

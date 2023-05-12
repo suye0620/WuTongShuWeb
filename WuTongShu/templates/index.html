@@ -381,7 +381,7 @@
                     <div class="col-lg-9 col-md-9">
                         <div class="row no-gutters grid-{{ forloop.counter }} mt-50" style="position: relative; height: 825px;">
                             {% for article in items_category|gv:'recommended_articles_of_the_category' %}
-                                <div class="col-lg-4 col-sm-6 {{ items_category|gv:'dict_tag2filter' | gv:article.tag.first }} sub-pic-position-{{ forloop.counter }}">
+                                <div class="col-lg-4 col-sm-6 {{ items_category|gv:'dict_tag2filter' | gv:article.tag }} sub-pic-position-{{ forloop.counter }}">
                                     <div class="single-portfolio">
                                         <div class="portfolio-image"><img src="{{ article.cover_square }}" alt="">
                                             <div class="portfolio-overlay d-flex align-items-center justify-content-center">

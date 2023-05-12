@@ -26,9 +26,10 @@ class CategoryAdmin(ImportExportModelAdmin):
 
 @admin.register(Tag)
 class TagAdmin(ImportExportModelAdmin):
-    list_display = ['id', 'name', 'add_to_index', 'get_items']
-    list_editable = ['name', 'add_to_index']
+    list_display = ['id', 'name', 'category', 'get_items']
+    list_editable = ['name', 'category']
     search_fields = ('name',)
+    list_filter = ('category',)
 
 
 @admin.register(Department)
@@ -48,10 +49,10 @@ class BannerAdmin(ImportExportModelAdmin):
 class ArticleAdmin(ImportExportModelAdmin):
     # 设置要显示在后台列表中的字段
     list_display = (
-        'add_time', 'title', 'content_url', 'cover_preview', 'category', 'show_tag', 'is_recommend', 'click_count',
+        'add_time', 'title', 'content_url', 'cover_preview', 'category', 'tag', 'is_recommend', 'click_count',
         'update_time')
     list_per_page = 10  # 设置每页显示多少条记录，默认是100条
-    list_editable = ['category', 'content_url', 'is_recommend']  # 设置默认可编辑字段，在列表里就可以编辑
+    list_editable = ['category', 'tag', 'content_url', 'is_recommend']  # 设置默认可编辑字段，在列表里就可以编辑
     ordering = ('-add_time',)  # 设置默认排序字段，负号表示降序排序
     list_display_links = ('title',)  # 设置哪些字段可以点击进入编辑界面
     search_fields = ('title', 'desc', 'tag')  # 置哪些字段可以查询
@@ -68,8 +69,8 @@ class ArticleAdmin(ImportExportModelAdmin):
         }),
     )
 
-    def show_tag(self, obj):
-        """在后台展示文章的所有tag"""
-        return [t.name for t in obj.tag.all()]
-
-    show_tag.short_description = "标签"  # 设置后台表头
+    # def show_tag(self, obj):
+    #     """在后台展示文章的所有tag"""
+    #     return [t.name for t in obj.tag.all()]
+    #
+    # show_tag.short_description = "标签"  # 设置后台表头

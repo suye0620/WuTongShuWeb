@@ -82,3 +82,8 @@ template → view → url → model(→admin→setting) → url → view → tem
 3. 看一下图片切换的js使用
 4. 把所有的标签先导进去（√）
 5. 因为每个文章有add_index选项，所以我们只用检查这些文章的标签，然后构建索引。这样不用遍历所有文章。
+
+## 模型关系
+article（多）-category（一） 
+article（多）-tag（一）
+category（一）-tag（多）

@@ -10,11 +10,6 @@ def duplicate(one_list: list):
 
 
 # Create your views here.
-def brand_details(request):
-    # render introduction pages for different student-work brands
-    return render(request, "details/brand_details.html")
-
-
 def department_details(request):
     # render introduction pages for different administrative departments
     departments = Department.objects.all()
@@ -38,7 +33,7 @@ def index(request):
         for category_count, category in enumerate(categories):
             recommended_articles_of_the_category = category.article_set.filter(is_recommend=True).all()
             tags_of_recommended_articles = duplicate(
-                [article.tag.first() for article in recommended_articles_of_the_category])
+                [article.tag for article in recommended_articles_of_the_category])
             dict_tag2filter = {}
             for tag_count, tag in enumerate(tags_of_recommended_articles):
                 # format函数：https://blog.csdn.net/xyx_x/article/details/90202813
@@ -53,7 +48,7 @@ def index(request):
 
         category0_articles = categories[0].article_set.filter(is_recommend=True).all()
 
-        tags_category0_articles = duplicate([article.tag.first() for article in category0_articles])
+        tags_category0_articles = duplicate([article.tag for article in category0_articles])
         dict_tag2filter = {}
         for count, tag in enumerate(tags_category0_articles):
             dict_tag2filter[tag] = "filter-0-{}".format(count)
@@ -62,9 +57,6 @@ def index(request):
             'all_banners': str_banners,
             'categories': categories,
             'list_items_categories': list_items_categories,
-            'test_category': category0_articles,
-            'tag_category0_articles': tags_category0_articles,
-            'dict_tag2filter': dict_tag2filter,
         }
     return render(request, "index.html", context=context)
 
@@ -72,8 +64,8 @@ def index(request):
 def article_category(request, id):
     """文章分类详情页"""
     category = Category.objects.get(id=id)
-    articles = Category.objects.get(id=id).article_set.all()  # 获取该id对应的所有的文章
-
+    tags = Category.objects.get(id=id).article_set.all()  # 获取该id对应的所有的文章
+    # tags_of_articles = Category.objects.get(id=id).article_set.values('tag').distinct()
     paginator = Paginator(articles, 9)  # 实例化一个分页对象, 每页显示10个
     page = request.GET.get('page')  # 从URL通过get页码，如?page=3
 
@@ -89,9 +81,7 @@ def article_category(request, id):
         'id': id,
         'page_obj': page_obj,
         'is_paginated': is_paginated,
-        'querystring': request.GET.urlencode(),
-        'max_page_num_before': 2,
-        'max_page_num_after': 2
+        # 'tags_of_articles': tags_of_articles,
     }
     return render(request, 'details/article_category.html', context=context)
 

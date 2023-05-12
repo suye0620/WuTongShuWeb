@@ -77,7 +77,8 @@ class Category(models.Model):
 class Tag(models.Model):
     """标签"""
     name = models.CharField(max_length=20, verbose_name='标签名称')
-    add_to_index = models.BooleanField(default=False, verbose_name='添加到首页')
+    # add_to_index = models.BooleanField(default=False, verbose_name='添加到首页')
+    category = models.ForeignKey(Category, blank=True, null=True, verbose_name='所属品牌', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = '标签'
@@ -115,7 +116,7 @@ class Article(models.Model):
     # 文章更新时间。参数 auto_now=True 指定每次数据更新时自动写入当前时间
     update_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
     category = models.ForeignKey(Category, blank=True, null=True, verbose_name='文章分类', on_delete=models.CASCADE)
-    tag = models.ManyToManyField(Tag, blank=True, null=True, verbose_name='文章标签')
+    tag = models.ForeignKey(Tag, blank=True, null=True, verbose_name='文章标签',on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = '文章'
