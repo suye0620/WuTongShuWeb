@@ -17,8 +17,9 @@ class SiteAdmin(ImportExportModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(ImportExportModelAdmin):
-    list_display = ['id', 'name', 'index', 'add_menu', 'icon', 'icon_data', 'banner', 'banner_preview', 'get_items']
-    list_editable = ['index', 'add_menu', 'icon', 'banner']
+    list_display = ['id', 'name', 'index', 'add_menu', 'icon', 'icon_data', 'banner', 'banner_preview', 'index_banner',
+                    'index_banner_preview', 'get_items']
+    list_editable = ['index', 'add_menu', 'icon', 'banner', 'index_banner']
     search_fields = ('name',)
     list_display_links = ('name',)  # 设置哪些字段可以点击进入编辑界面
 
@@ -51,12 +52,12 @@ class ArticleAdmin(ImportExportModelAdmin):
         'update_time')
     list_per_page = 10  # 设置每页显示多少条记录，默认是100条
     list_editable = ['category', 'content_url', 'is_recommend']  # 设置默认可编辑字段，在列表里就可以编辑
-    ordering = ('-add_time', )  # 设置默认排序字段，负号表示降序排序
+    ordering = ('-add_time',)  # 设置默认排序字段，负号表示降序排序
     list_display_links = ('title',)  # 设置哪些字段可以点击进入编辑界面
     search_fields = ('title', 'desc', 'tag')  # 置哪些字段可以查询
-    list_filter = ('category', 'is_recommend','add_time')  # 过滤器，按字段进行筛选
+    list_filter = ('category', 'is_recommend', 'add_time')  # 过滤器，按字段进行筛选
     date_hierarchy = 'add_time'  # 详细时间分层筛选　
-    readonly_fields = ('cover_preview','cover_square_preview')  # 只读字段，添加该字段才能在后台预览封面，否则报错
+    readonly_fields = ('cover_preview', 'cover_square_preview')  # 只读字段，添加该字段才能在后台预览封面，否则报错
     fieldsets = (  # 后台文章编辑页面排版
         ('文章信息', {
             'fields': ('title', 'author', 'cover', 'cover_preview', 'desc', 'content_url')

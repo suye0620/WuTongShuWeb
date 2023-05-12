@@ -36,9 +36,11 @@ class Category(models.Model):
     add_menu = models.BooleanField(default=False, verbose_name='添加到导航栏')
     icon = models.CharField(max_length=30, default='fas fa-home', verbose_name='导航栏图标')
     banner = models.URLField(max_length=200, default='http://42.193.14.111/static/upload/tsxywts/banner6.jpg',
-                             verbose_name='品牌封面')
-    primary_color = models.CharField(max_length=7, default="#FFD700", verbose_name="颜色1")
-    secondary_color = models.CharField(max_length=7, default="#fd614a", verbose_name="颜色2")
+                             verbose_name='详情页品牌封面')
+    index_banner = models.URLField(max_length=200, default='http://42.193.14.111/static/upload/tsxywts/banner1.jpg',
+                                   verbose_name='主页品牌封面')
+    primary_color = models.CharField(max_length=7, default="#FFD700", verbose_name="颜色1(primary_color)")
+    secondary_color = models.CharField(max_length=7, default="#fd614a", verbose_name="颜色2(secondary_color)")
 
     class Meta:
         verbose_name = '工作品牌'
@@ -55,7 +57,12 @@ class Category(models.Model):
     def banner_preview(self):
         return format_html('<img src="{}" width="200px" height="150px"/>', self.banner, )
 
-    banner_preview.short_description = '品牌封面预览'
+    banner_preview.short_description = '详情页品牌封面预览'
+
+    def index_banner_preview(self):
+        return format_html('<img src="{}" width="200px" height="150px"/>', self.index_banner, )
+
+    index_banner_preview.short_description = '主页品牌封面预览'
 
     # 后台图标预览
     def icon_data(self):  # 引入Font Awesome Free 5.11.1
@@ -95,20 +102,20 @@ class Article(models.Model):
                             verbose_name='文章封面')
 
     content_url = models.URLField(max_length=250, default='https://mp.weixin.qq.com/s/gkeOZMPFoQQdMH5kM_sYCQ',
-                            verbose_name='文章链接')
+                                  verbose_name='文章链接')
     click_count = models.PositiveIntegerField(default=0, verbose_name='阅读量')
 
     is_recommend = models.BooleanField(default=False, verbose_name='是否在首页推荐')
-    index = models.IntegerField(default=1, verbose_name='在首页子版块中展示的顺序',blank=True)
+    index = models.IntegerField(default=1, verbose_name='在首页子版块中展示的顺序', blank=True)
     cover_square = models.URLField(max_length=200, default='http://42.193.14.111/static/upload/tsxywts/6.png',
-                            verbose_name='在首页子版块中展示的方形封面',blank=True)
+                                   verbose_name='在首页子版块中展示的方形封面', blank=True)
 
     # 文章创建时间。参数 default=datetime.now 指定其在创建数据时将默认写入当前的时间
     add_time = models.DateTimeField(default=datetime.now, verbose_name='发布时间')
     # 文章更新时间。参数 auto_now=True 指定每次数据更新时自动写入当前时间
     update_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
     category = models.ForeignKey(Category, blank=True, null=True, verbose_name='文章分类', on_delete=models.CASCADE)
-    tag = models.ManyToManyField(Tag, blank=True, null=True,verbose_name='文章标签')
+    tag = models.ManyToManyField(Tag, blank=True, null=True, verbose_name='文章标签')
 
     class Meta:
         verbose_name = '文章'
