@@ -6152,7 +6152,9 @@
     font-style: normal;
     font-weight: 400;
     font-display: block;
-    src: url(../webfonts/fa-brands-400.woff2) format("woff2"),url(../webfonts/fa-brands-400.ttf) format("truetype"),url("../webfonts/fontawesome-webfont.svg") format("svg");
+    src: url(../webfonts/fa-brands-400.woff2) format("woff2"),
+        url(../webfonts/fa-brands-400.ttf) format("truetype"),
+        url("../webfonts/fontawesome-webfont.svg") format("svg");
 }
 
 .fa-brands, .fab {

@@ -266,6 +266,7 @@
                             {% endif %}
                         </ul>
                         <form class="d-inline" action="{% url 'article_category' category.id %}" method="GET">
+                            <input type="text" class="d-none" value="{{ request.GET.tag }}" id="input-tag" name="tag">
                             <input type="text" class="" style="width: 3rem;height: 100%;border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;line-height: 1.25;
     color: var(--primary-color);

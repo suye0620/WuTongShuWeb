@@ -319,6 +319,14 @@
         <style>
             .w3l-covers-14-pic-{{ forloop.counter }} {
                 background: url("{{ items_category|gv:'category'|get_attr:'index_banner' }}") no-repeat center fixed;
+                background-size: cover;
+                {#下面不写全会导致图片不能完整填充#}
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                -ms-background-size: cover;
+                position: relative;
+                z-index: 1;
             }
         </style>
         <!-- bg with text section-{{ forloop.counter }} -->
