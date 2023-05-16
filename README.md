@@ -1,4 +1,5 @@
 # WuTongShuWeb
+
 zueltsxy展示网站
 
 ## Django运行环境创建
@@ -39,7 +40,6 @@ zueltsxy展示网站
 18. [(1条消息) Django怎么获取get请求里面的参数_django获取get请求参数_他-途的博客-CSDN博客](https://blog.csdn.net/au55555/article/details/80024375)
 19. [4,000+张最精彩的“潮汐”图片 · 100%免费下载 · Pexels素材图片](https://www.pexels.com/zh-cn/search/%E6%BD%AE%E6%B1%90/)
 
-
 ## 页面设计
 
 ### index主页
@@ -56,13 +56,14 @@ zueltsxy展示网站
 
 ![img.png](README-imgs/img3.png)
 
-### 各职能机构的介绍页 
+### 各职能机构的介绍页
 
 考虑使用原始模板的about us页面
 
 ![img.png](README-imgs/img4.png)
 
 ## 模型抽象
+
 1. banner抽象（图片链接、图片名称）(√)
 2. site抽象(√)
 3. 版块抽象（banner、标签等）(√)
@@ -74,7 +75,6 @@ template → view → url → model(→admin→setting) → url → view → tem
 
 其中，admin细节为在admin.py文件中注册自己设计的模型；setting细节为自定义后台admin界面。
 
-
 ## TODO
 
 1. 生成测试文章用于开发后续功能（√）
@@ -85,15 +85,18 @@ template → view → url → model(→admin→setting) → url → view → tem
 
 ## 模型关系
 
-article（多）-category（一） 
+article（多）-category（一）
 article（多）-tag（一）
 category（一）-tag（多）
 
 ## 问题
 
-1. 功能演示
+1. ~~功能演示~~
 2. 图片尺寸问题（封面banner、品牌banner、文章card banner）
-3. 搜索功能是否需要
-4. 前端整体的颜色选择
-5. 是否需要使用文档（图床及网站管理端）
-6. footer部分如何设计（比如想添加哪些内容、友链）
+3. ~~logo调整（√）~~
+4. ~~搜索功能是否需要（×）~~
+5. ~~前端整体的颜色选择（logo的颜色）~~
+6. 是否需要使用文档（图床及网站管理端）（√）
+7. footer部分如何设计（比如想添加哪些内容、友链）（学院官网）
+8. 设计人物类、友链类、视频？
+9. 在网站设置中增加一个网站标语字段（添加到foot）

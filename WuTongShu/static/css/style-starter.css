@@ -11009,11 +11009,11 @@ a.text-dark:focus {
 }
 
 :root {
-    --theme-color: #e40000;
-    --primary-color: #FFD700;
+    --theme-color: #2AAADC;
+    --primary-color: #2AAADC;
     --primary-light: #fcf1e7;
     --primary-dark: #ffc945;
-    --secondary-color: #fd614a;
+    --secondary-color: rgba(42, 170, 220, 0.618);
     --font-color: #707070;
     --bg-color: #fff;
     --heading-color: #060606;
@@ -11032,10 +11032,10 @@ a.text-dark:focus {
 }
 
 [data-theme="dark"] {
-    --theme-color: #e40000;
-    --primary-color: #FFD700;
+    --theme-color: #2AAADC;
+    --primary-color: #2AAADC;
     --primary-light: #ffc945;
-    --secondary-color: #fd614a;
+    --secondary-color: rgba(42, 170, 220, 0.618);
     --primary-dark: #00070c;
     --font-color: #b7b7b7;
     --bg-color: #171717;
@@ -12139,7 +12139,8 @@ button.search-btn:hover {
     }
 
     .navbar .navbar-brand img {
-        max-width: 54px;
+        /*在这里修改logo的最大显示宽度*/
+        max-width: 100px;
     }
 
     .navbar-toggler {
@@ -12296,7 +12297,7 @@ button.search-btn:hover {
     .cont-ser-position {
         right: 45px;
         /*主题颜色切换按钮的位置*/
-        top: 30px;
+        top: 24px;
     }
 
     header.nav-fixed nav.navbar.navbar-expand-lg.stroke {
@@ -12315,7 +12316,7 @@ button.search-btn:hover {
     line-height: 25px;
     color: #fff;
     text-transform: uppercase;
-    background: var(--secondary-color);
+    background: var(--primary-color);
     border-radius: 30px;
     transition: all .25s ease-in-out;
     border: none;
@@ -12323,7 +12324,7 @@ button.search-btn:hover {
 }
 
 .btn-style:hover {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     transition: all .25s ease-in-out;
 }
 
@@ -13323,7 +13324,7 @@ h3.video-title {
 span.label-blue {
     color: var(--secondary-color);
     display: inline-block;
-    background: rgb(253 97 74 / 7%);
+    background: rgba(22, 29, 32, 0.07);
     padding: 5px 20px;
     border-radius: var(--border-radius-full);
     font-weight: 600;
@@ -13482,7 +13483,7 @@ ul.blog-meta li a {
 }
 
 .w3l-team-main {
-    background: linear-gradient(75deg, #fd614a 10%, #fd844a);
+    background: linear-gradient(75deg, var(--primary-color) 10%, var(--secondary-color));
 }
 
 .w3l-team-main .team {

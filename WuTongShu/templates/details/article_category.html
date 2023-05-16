@@ -39,23 +39,23 @@
     <div class="blog-section py-5">
         <div class="container py-md-5 py-4">
             <div class="waviy text-center mb-md-2 mb-2">
-                <span style="--i:1">O</span>
-                <span style="--i:2">u</span>
-                <span style="--i:3">r</span>
-                <span style="--i:4"></span>
-                <span style="--i:5">N</span>
-                <span style="--i:6">e</span>
-                <span style="--i:7">w</span>
-                <span style="--i:8">s</span>
-                <span style="--i:1"></span>
-                <span style="--i:2">&</span>
-                <span style="--i:3"></span>
-                <span style="--i:4">E</span>
-                <span style="--i:5">v</span>
-                <span style="--i:6">e</span>
-                <span style="--i:7">n</span>
-                <span style="--i:8">t</span>
-                <span style="--i:9">s</span>
+                <span style="--i:1">活</span>
+                <span style="--i:2">动</span>
+                <span style="--i:3">一</span>
+                <span style="--i:4">览</span>
+{#                <span style="--i:5">N</span>#}
+{#                <span style="--i:6">e</span>#}
+{#                <span style="--i:7">w</span>#}
+{#                <span style="--i:8">s</span>#}
+{#                <span style="--i:1"></span>#}
+{#                <span style="--i:2">&</span>#}
+{#                <span style="--i:3"></span>#}
+{#                <span style="--i:4">E</span>#}
+{#                <span style="--i:5">v</span>#}
+{#                <span style="--i:6">e</span>#}
+{#                <span style="--i:7">n</span>#}
+{#                <span style="--i:8">t</span>#}
+{#                <span style="--i:9">s</span>#}
             </div>
             <div class="text-center">
                     <a href="{% url 'article_category' category.id %}" class="btn btn-style mb-md-2 mb-2">ALL</a>
@@ -69,23 +69,22 @@
                         <div class="col-lg-4 col-md-6 item">
                             <div class="card">
                                 <div class="card-header p-0 position-relative">
-                                    <a href="#single">
+                                    <a href="{{ article.content_url }}" target="_blank">
+                                        <!-- 微信图文的封面大小为900*382左右 -->
                                         <img class="card-img-bottom d-block radius-image-full"
-                                             src="{% static 'images/blog1.jpg' %}"
+                                             src="{{ article.cover }}"
                                              alt="Card image cap">
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
                                     <span class="label-blue">{{ article.tag }}</span><br>
-                                    <a href="#single" class="blog-desc">{{ article.title }}
+                                    <a href="{{ article.content_url }}" class="blog-desc" target="_blank">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
                                         <img src="{% static 'images/testi1.jpg' %}" alt=""
                                              class="img-fluid rounded-circle"/>
                                         <ul class="blog-meta">
-                                            <li>
-                                                <a href="#single">{{ article.author }}</a>
-                                            </li>
+                                            <li>{{ article.author }}</li>
                                             <li class="meta-item blog-lesson">
                                                 <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>.
                                                 <span
@@ -101,23 +100,21 @@
                         <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
                             <div class="card">
                                 <div class="card-header p-0 position-relative">
-                                    <a href="#single">
+                                    <a href="{{ article.content_url }}" target="_blank">
                                         <img class="card-img-bottom d-block radius-image-full"
-                                             src="{% static 'images/blog3.jpg' %}"
+                                             src="{{ article.cover }}"
                                              alt="Card image cap">
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
                                     <span class="label-blue">{{ article.tag }}</span><br>
-                                    <a href="#single" class="blog-desc">{{ article.title }}
+                                    <a href="{{ article.content_url }}" class="blog-desc" target="_blank">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
                                         <img src="{% static 'images/testi1.jpg' %}" alt=""
                                              class="img-fluid rounded-circle"/>
                                         <ul class="blog-meta">
-                                            <li>
-                                                <a href="#single">{{ article.author }}</a>
-                                            </li>
+                                            <li>{{ article.author }}</li>
                                             <li class="meta-item blog-lesson">
                                                 <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>.
                                                 <span
@@ -133,23 +130,21 @@
                         <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
                             <div class="card">
                                 <div class="card-header p-0 position-relative">
-                                    <a href="#single">
+                                    <a href="{{ article.content_url }}" target="_blank">
                                         <img class="card-img-bottom d-block radius-image-full"
-                                             src="{% static 'images/blog2.jpg' %}"
+                                             src="{{ article.cover }}"
                                              alt="Card image cap">
                                     </a>
                                 </div>
                                 <div class="card-body blog-details">
                                     <span class="label-blue">{{ article.tag }}</span><br>
-                                    <a href="#single" class="blog-desc">{{ article.title }}
+                                    <a href="{{ article.content_url }}" class="blog-desc" target="_blank">{{ article.title }}
                                     </a>
                                     <div class="author align-items-center mt-3 mb-1">
                                         <img src="{% static 'images/testi1.jpg' %}" alt=""
                                              class="img-fluid rounded-circle"/>
                                         <ul class="blog-meta">
-                                            <li>
-                                                <a href="#single">{{ article.author }}</a>
-                                            </li>
+                                            <li>{{ article.author }}</li>
                                             <li class="meta-item blog-lesson">
                                                 <span class="meta-value"> {{ article.update_time|date:"M d Y" }} </span>.
                                                 <span
