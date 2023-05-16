@@ -84,6 +84,16 @@ template → view → url → model(→admin→setting) → url → view → tem
 5. 因为每个文章有add_index选项，所以我们只用检查这些文章的标签，然后构建索引。这样不用遍历所有文章。
 
 ## 模型关系
+
 article（多）-category（一） 
 article（多）-tag（一）
 category（一）-tag（多）
+
+## 问题
+
+1. 功能演示
+2. 图片尺寸问题（封面banner、品牌banner、文章card banner）
+3. 搜索功能是否需要
+4. 前端整体的颜色选择
+5. 是否需要使用文档（图床及网站管理端）
+6. footer部分如何设计（比如想添加哪些内容、友链）
