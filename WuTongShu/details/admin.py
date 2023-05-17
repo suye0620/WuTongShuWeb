@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from .models import Site, Category, Tag, Article, Department, Banner
+from .models import Site, Category, Tag, Article, Department, Banner, Friendshiplink, Video, Teammember
 
 # Register your models here.
 
@@ -37,6 +37,24 @@ class DepartmentAdmin(ImportExportModelAdmin):
     list_display = ['name', 'url', 'avatar_admin', 'desc', 'button_word']
     list_editable = ['url', 'button_word']
     search_fields = ('name', 'desc')
+
+
+@admin.register(Teammember)
+class TeammemberAdmin(ImportExportModelAdmin):
+    list_display = ['name', 'photo', 'photo_admin', 'introduction_url', 'sort_num']
+    list_editable = ['photo', 'introduction_url', 'sort_num']
+
+
+@admin.register(Video)
+class VideoAdmin(ImportExportModelAdmin):
+    list_display = ['name', 'video_url', ]
+    list_editable = ['video_url', ]
+
+
+@admin.register(Friendshiplink)
+class FriendshiplinkAdmin(ImportExportModelAdmin):
+    list_display = ['name', 'introduction_url', 'sort_num']
+    list_editable = ['introduction_url', 'sort_num']
 
 
 @admin.register(Banner)

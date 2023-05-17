@@ -16,12 +16,11 @@
                         felis. Maecenas malesuada elit lectus felis, malesuada ultricies.</p>
                 </div>
                 <div class="col-lg-3 col-sm-6 footer-list-29 mt-lg-0 mt-sm-5 mt-4 pt-sm-0 pt-2">
-                    <h6 class="footer-title-29">SUPPORT</h6>
+                    <h6 class="footer-title-29">友情链接</h6>
                     <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms"> Terms of Service</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
-                        <li><a href="#support"> Support</a></li>
+                        {% for link in FRIENDSHIP_LINKS%}
+                            <li><a href="{{ link.introduction_url }}">{{ link.name }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-6 footer-contact-list mt-lg-0 mt-sm-5 mt-4 pt-sm-0 pt-2">

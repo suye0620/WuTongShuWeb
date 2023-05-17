@@ -75,7 +75,7 @@ template → view → url → model(→admin→setting) → url → view → tem
 
 其中，admin细节为在admin.py文件中注册自己设计的模型；setting细节为自定义后台admin界面。
 
-## TODO
+## TODO1
 
 1. 生成测试文章用于开发后续功能（√）
 2. 先把归档页做好(√)
@@ -89,7 +89,7 @@ article（多）-category（一）
 article（多）-tag（一）
 category（一）-tag（多）
 
-## 问题
+## TODO2
 
 1. ~~功能演示~~
 2. 图片尺寸问题（封面banner、品牌banner、文章card banner）
@@ -98,5 +98,5 @@ category（一）-tag（多）
 5. ~~前端整体的颜色选择（logo的颜色）~~
 6. 是否需要使用文档（图床及网站管理端）（√）
 7. footer部分如何设计（比如想添加哪些内容、友链）（学院官网）
-8. 设计人物类、友链类、视频？
+8. 设计~~人物类~~、~~友链类~~、~~视频~~？
 9. 在网站设置中增加一个网站标语字段（添加到foot）

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Banner, Category, Site, Department, Tag
+from .models import Banner, Category, Site, Department, Tag, Video, Friendshiplink, Teammember
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -13,8 +13,10 @@ def duplicate(one_list: list):
 def department_details(request):
     # render introduction pages for different administrative departments
     departments = Department.objects.all()
+    teammembers = Teammember.objects.all()
     context = {
-        'departments': departments
+        'departments': departments,
+        'teammembers': teammembers,
     }
     return render(request, "details/department_details.html", context)
 
@@ -64,8 +66,8 @@ def index(request):
 def article_category(request, id):
     """文章分类详情页"""
     category = Category.objects.get(id=id)
-    tag_id = request.GET.get('tag',default=None)
-    if tag_id==None:
+    tag_id = request.GET.get('tag', default=None)
+    if tag_id == None:
         articles = Category.objects.get(id=id).article_set.all()  # 获取该id对应的所有的文章
     else:
         articles = Tag.objects.get(id=tag_id).article_set.all()  # 获取该id对应的所有的文章
@@ -103,6 +105,7 @@ def global_params(request):
     dynamic_slogan = Site.objects.first().dynamic_slogan
     icp_number = Site.objects.first().icp_number
     icp_url = Site.objects.first().icp_url
+    friendshiplinks = Friendshiplink.objects.all()
     return {
         'category_nav': category_nav,
         'SITE_NAME': site_name,
@@ -113,4 +116,5 @@ def global_params(request):
         'DYNAMIC_SLOGAN': dynamic_slogan,
         'ICP_NUMBER': icp_number,
         'ICP_URL': icp_url,
+        'FRIENDSHIP_LINKS': friendshiplinks,
     }

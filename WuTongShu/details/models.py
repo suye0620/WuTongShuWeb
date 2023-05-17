@@ -116,7 +116,7 @@ class Article(models.Model):
     # 文章更新时间。参数 auto_now=True 指定每次数据更新时自动写入当前时间
     update_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
     category = models.ForeignKey(Category, blank=True, null=True, verbose_name='文章分类', on_delete=models.CASCADE)
-    tag = models.ForeignKey(Tag, blank=True, null=True, verbose_name='文章标签',on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, blank=True, null=True, verbose_name='文章标签', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = '文章'
@@ -141,19 +141,68 @@ class Department(models.Model):
     """部门"""
     name = models.CharField(max_length=10, verbose_name='部门名称')
     url = models.URLField(verbose_name='介绍链接', blank=True)
-    avatar = models.URLField(default='http://42.193.14.111/static/upload/tsxywts/testi2.jpg', verbose_name='头像')
+    avatar = models.URLField(default='http://42.193.14.111/static/upload/tsxywts/testi2.jpg', verbose_name='部门头像')
     # 这边字放多一些
     desc = models.TextField(max_length=500, verbose_name='描述')
     button_word = models.CharField(default='详情', max_length=10, verbose_name='跳转文字')
 
     class Meta:
-        verbose_name = verbose_name_plural = '成员'
+        verbose_name = verbose_name_plural = '部门'
 
     # 后台头像预览
     def avatar_admin(self):
         return format_html('<img src="{}" width="50px" height="50px" style="border-radius: 50%;" />', self.avatar, )
 
-    avatar_admin.short_description = '头像预览'
+    avatar_admin.short_description = '部门头像预览'
+
+    def __str__(self):
+        return self.name
+
+
+class Teammember(models.Model):
+    """人物介绍管理"""
+    name = models.CharField(max_length=10, verbose_name='姓名（昵称）')
+    desc = models.CharField(max_length=100, verbose_name='人物简介')
+    photo = models.URLField(default='http://42.193.14.111/static/upload/tsxywts/testi2.jpg', max_length=200,
+                            verbose_name='照片链接')
+    introduction_url = models.URLField(max_length=250, default='https://mp.weixin.qq.com/s/gkeOZMPFoQQdMH5kM_sYCQ',
+                                       verbose_name='人物介绍链接')
+    button_word = models.CharField(default='点击了解', max_length=10, verbose_name='跳转文字')
+    sort_num = models.IntegerField(default=1, verbose_name='展示顺序')
+
+    class Meta:
+        verbose_name = verbose_name_plural = '人物'
+        ordering = ('sort_num',)
+
+    def photo_admin(self):
+        return format_html('<img src="{}" width="50px" height="50px" style="border-radius: 50%;" />', self.photo, )
+
+    photo_admin.short_description = '照片预览'
+
+    def __str__(self):
+        return self.name
+
+class Friendshiplink(models.Model):
+    name = models.CharField(max_length=30, verbose_name='友链名称')
+    introduction_url = models.URLField(max_length=250, default='http://tsxy.zuel.edu.cn/',
+                                       verbose_name='友链链接')
+    sort_num = models.IntegerField(default=1, verbose_name='展示顺序')
+
+    class Meta:
+        verbose_name = verbose_name_plural = '友链'
+        ordering = ('sort_num',)
+
+    def __str__(self):
+        return self.name
+
+class Video(models.Model):
+    name = models.CharField(max_length=30, verbose_name='视频名称')
+    video_url = models.URLField(max_length=250, default='http://tsxy.zuel.edu.cn/',
+                                       verbose_name='视频链接')
+
+
+    class Meta:
+        verbose_name = verbose_name_plural = '首页宣传视频'
 
     def __str__(self):
         return self.name

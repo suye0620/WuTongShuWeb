@@ -13543,11 +13543,24 @@ ul.blog-meta li a {
     display: block;
 }
 
+.w3l-team-main .team-sub-title {
+    margin: 8px 0 12px;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+}
+
 .w3l-team-main .team-member p {
     text-transform: capitalize;
+    /*和悬停img上保持一致*/
+    transition: all .2s ease-in-out;
 }
 
 .w3l-team-main .team-member:hover a {
+    color: var(--heading-color);
+}
+
+.w3l-team-main .team-member:hover p {
     color: var(--heading-color);
 }
 
@@ -13594,6 +13607,11 @@ ul.blog-meta li a {
     .w3l-team-main .team-title {
         font-size: 22px;
         margin: 20px 0 10px;
+    }
+
+    .w3l-team-main .team-sub-title {
+        font-size: 14px;
+        margin: 5px 0 10px;
     }
 
     .w3l-team-main .socials a span {

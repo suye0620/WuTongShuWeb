@@ -175,6 +175,18 @@ SIMPLEUI_CONFIG = {
         'name': '首页横幅',
         'icon': 'far fa-images',
         'url': '/admin/details/banner/'
+    },{
+        'name': '首页视频',
+        'icon': 'fas fa-video',
+        'url': '/admin/details/video/'
+    }, {
+        'name': '友链',
+        'icon': 'fas fa-link',
+        'url': '/admin/details/friendshiplink/'
+    },{
+        'name': '人物',
+        'icon': 'fas fa-id-badge',
+        'url': '/admin/details/teammember/'
     }, {
         'name': '网站设置',
         'icon': 'fas fa-globe-americas',

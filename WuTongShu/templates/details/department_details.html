@@ -124,91 +124,19 @@
                 </div>
                 <div class="team-wrapper">
                     <div class="team-row team-container mt-md-5 mt-4">
+                        {% for teammember in teammembers %}
                         <div class="team-wrap team-item mx-2 mx-lg-4">
                             <div class="team-member text-center">
                                 <div class="team-img">
-                                    <img src="{% static 'images/team1.jpg' %}" alt="" class="radius-image">
+                                    <img src="{{ teammember.photo }}" alt="" class="radius-image">
                                 </div>
-                                <a href="#url" class="team-title">Lyn Victor</a>
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="{{ teammember.introduction_url }}" class="team-title">{{ teammember.name }}</a>
+                                <p class="team-sub-title">{{ teammember.desc }}</p>
+                                <a href="{{ teammember.introduction_url }}" class="btn btn-style mt-1">{{ teammember.button_word }}</a>
                             </div>
                         </div>
-                        <div class="team-wrap team-item mx-2 mx-lg-4">
-                            <div class="team-member text-center">
-                                <div class="team-img">
-                                    <img src="{% static 'images/team2.jpg' %}" alt="" class="radius-image">
-                                </div>
-                                <a href="#url" class="team-title">Meyer Lson</a>
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa-r fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa-b fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa-b fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-wrap team-item mx-2 mx-lg-4">
-                            <div class="team-member last text-center">
-                                <div class="team-img">
-                                    <img src="{% static 'images/team3.jpg' %}" alt="" class="radius-image">
-                                </div>
-                                <a href="#url" class="team-title">Lyn Meyer</a>
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-wrap team-item mx-2 mx-lg-4">
-                            <div class="team-member last text-center">
-                                <div class="team-img">
-                                    <img src="{% static 'images/team4.jpg' %}" alt="" class="radius-image">
-                                </div>
-                                <a href="#url" class="team-title">Sam Mills</a>
-                                <div class="team-details text-center">
-                                    <div class="socials mt-20">
-                                        <a href="#url">
-                                            <span class="fa fa-facebook-f"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                        <a href="#url">
-                                            <span class="fa fa-instagram"></span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end team member -->
+
+                        {% endfor %}
                     </div>
                 </div>
             </div>
